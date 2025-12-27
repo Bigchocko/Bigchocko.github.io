@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigChocko Studio | Official</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">BIG<span>CHOCKO</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="artysta.html">Artysta</a></li>
+                <li><a href="wspolpraca.html">Współpraca</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <canvas id="particle-canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <div class="studio-container">
+        <aside class="side-panel">
+            <div class="glass-module profile-card">
+                <div class="avatar-holder">
+                    <img src="assets/img/benger.jpg" alt="BigChocko" id="avatar">
+                    <div class="music-glow"></div>
+                </div>
+                <div class="profile-text">
+                    <h1>BigChocko</h1>
+                    <p class="role">Artist / Producer</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            <div class="news-ticker-container">
+                <div class="ticker-content">
+                    NOWY TRACK "JZ STAN UMYSŁU" // DOSTĘPNY NA YT I SPOTIFY // BIGCHOCKO PRODUCTION // 2025 // 
+                </div>
+            </div>
+
+            <div class="links-grid">
+                <a href="https://www.youtube.com/@BigChocko1" target="_blank" class="link-item">
+                    <i class="fab fa-youtube"></i>
+                    <div class="link-info">
+                        <span class="link-name">YouTube</span>
+                        <span class="link-sub">subskrybuj kanał</span>
+                    </div>
+                </a>
+                <a href="#" class="link-item">
+                    <i class="fab fa-spotify"></i>
+                    <div class="link-info">
+                        <span class="link-name">Spotify</span>
+                        <span class="link-sub">słuchaj albumu</span>
+                    </div>
+                </a>
+                <a href="https://www.tiktok.com/@big_chocko" target="_blank" class="link-item">
+                    <i class="fab fa-tiktok"></i>
+                    <div class="link-info">
+                        <span class="link-name">TikTok</span>
+                        <span class="link-sub">obserwuj profil</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/j.nocun/" target="_blank" class="link-item">
+                    <i class="fab fa-instagram"></i>
+                    <div class="link-info">
+                        <span class="link-name">Instagram</span>
+                        <span class="link-sub">bądź na bieżąco</span>
+                    </div>
+                </a>
+
+                <a href="https://tipply.pl/@bigchocko" target="_blank" class="link-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <div class="link-info">
+                        <span class="link-name">Donate</span>
+                        <span class="link-sub">wesprzyj twórczość</span>
+                    </div>
+                </a>
+                
+                <a href="https://www.youtube.com/watch?v=hG-YLhfJy2s" target="_blank" class="link-item">
+                    <i class="fas fa-fire"></i>
+                    <div class="link-info">
+                        <span class="link-name">Najnowszy Numer</span>
+                        <span class="link-sub">zobacz na YouTube</span>
+                    </div>
+                </a>
+
+                <div class="link-item bento-beat large-bento">
+                    <span class="mini-tag">LIVE BEAT VISUALIZER</span>
+                    <div class="beat-bars">
+                        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <div class="link-item bento-vibe large-bento">
+                    <span class="mini-tag">VIBE RADAR</span>
+                    <div class="vibe-container">
+                        <div class="vibe-circle"></div>
+                        <span id="vibe-status">STYPA</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="player-bar">
+        <div class="player-content">
+            <div class="track-info-large">
+                <div class="album-cover-box">
+                    <img src="assets/img/benger.jpg" id="rotating-cover" alt="Vinyl">
+                </div>
+                <div class="track-text">
+                    <h3 id="current-title">Wczytywanie...</h3>
+                    <p id="current-artist">Proszę czekać</p>
+                </div>
+            </div>
+
+            <div class="controls-center">
+                <button id="prev"><i class="fas fa-step-backward"></i></button>
+                <button id="play-pause" class="btn-main-play"><i class="fas fa-play"></i></button>
+                <button id="next"><i class="fas fa-step-forward"></i></button>
+            </div>
+
+            <div class="extra-controls">
+                <div class="vol-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volume-slider" value="75" max="100">
+                </div>
+            </div>
+        </div>
+        <div class="progress-area">
+            <input type="range" id="progress-bar" value="0" max="100">
+            <div class="time-info">
+                <span id="time-display">0:00 / 0:00</span>
+            </div>
+        </div>
+
+        <footer class="player-footer">
+            <p>© 2025 BigChocko. All Rights Reserved. Created by <span>Kapix</span></p>
+        </footer>
+    </div>
+
+    <audio id="audio"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* artysta.css */
+body.artist-page {
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    display: flex; /* Dodane dla lepszego układu pionowego */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* BACKGROUND */
+.bg-animations { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.glow-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+    filter: blur(60px);
+    animation: pulse 10s infinite alternate;
+}
+.gc-1 { width: 600px; height: 600px; top: -150px; left: -150px; }
+.gc-2 { width: 400px; height: 400px; bottom: -100px; right: -50px; }
+
+.floating-icon {
+    position: absolute;
+    color: rgba(0, 255, 65, 0.04);
+    font-size: 6rem;
+    animation: floatIcon 12s infinite linear;
+}
+.fi-1 { top: 15%; right: 10%; }
+.fi-2 { bottom: 20%; left: 8%; }
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-30px) rotate(15deg); }
+}
+
+/* HERO SECTION */
+.artist-wrapper { 
+    max-width: 1300px; 
+    margin: 140px auto 40px; 
+    padding: 0 30px; 
+    flex: 1; /* Sprawia, że main zajmuje dostępną przestrzeń, spychając stopkę na dół */
+}
+
+.artist-hero { text-align: center; margin-bottom: 70px; }
+.glitch-title { 
+    font-size: clamp(3rem, 10vw, 6.5rem); 
+    font-weight: 900; 
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.glitch-title span { color: #00ff41; text-shadow: 0 0 30px rgba(0, 255, 65, 0.5); }
+.hero-line { width: 100px; height: 4px; background: #00ff41; margin: 20px auto; border-radius: 2px; }
+
+/* GRID SYSTEM */
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    margin-bottom: 100px;
+}
+
+/* KAFELKI */
+.pillar-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 255, 65, 0.05);
+    padding: 30px;
+    border-radius: 25px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-bio-card {
+    padding: 50px;
+    background: rgba(0, 255, 65, 0.02);
+    border: 1px solid rgba(0, 255, 65, 0.1);
+}
+
+.pillar-card:hover {
+    background: rgba(0, 255, 65, 0.05);
+    border-color: #00ff41;
+}
+
+.pillar-header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+.pillar-header i { color: #00ff41; font-size: 2rem; }
+.pillar-header h2, .pillar-header h3 { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; }
+.pillar-header h2 span { color: #00ff41; }
+
+.pillar-card p { color: #aaa; line-height: 1.7; font-size: 1.05rem; margin-bottom: 15px; }
+
+.pillars-container { display: flex; flex-direction: column; gap: 20px; }
+
+/* CYTAT */
+.quote-section { display: flex; justify-content: center; margin-top: 50px; margin-bottom: 80px; }
+.quote-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 60px 40px;
+    border-radius: 35px;
+    text-align: center;
+    max-width: 900px;
+    border: 1px solid rgba(0, 255, 65, 0.1);
+}
+.quote-line {
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 150px; height: 3px; background: #00ff41;
+    box-shadow: 0 0 20px #00ff41;
+}
+.quote-box p { font-size: 1.7rem; font-style: italic; line-height: 1.6; color: #eee; margin-bottom: 20px; }
+.author { color: #00ff41; font-weight: 900; letter-spacing: 5px; text-transform: uppercase; }
+
+/* COPYRIGHT FOOTER - NA SAMYM DOLE, BEZ RAMEK */
+.artist-footer {
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: auto; /* Pcha stopkę na dół w kontenerze flex */
+    border-top: 1px solid rgba(0, 255, 65, 0.05); /* Bardzo delikatna linia dla oddzielenia */
+}
+
+.artist-footer p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.artist-footer span {
+    color: #00ff41;
+    font-weight: 800;
+}
+
+/* RWD */
+@media (max-width: 968px) {
+    .bio-grid { grid-template-columns: 1fr; }
+    .main-bio-card { padding: 30px; }
+}

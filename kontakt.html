@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONTAKT | BIGCHOCKO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kontakt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="contact-page">
+    <div class="bg-elements">
+        <i class="fas fa-music ani-1"></i>
+        <i class="fas fa-bolt ani-2"></i>
+        <i class="fas fa-fire ani-3"></i>
+        <i class="fas fa-headphones ani-4"></i>
+    </div>
+
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">BIG<span>CHOCKO</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artysta.html">Artysta</a></li>
+                <li><a href="wspolpraca.html">Współpraca</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contact-ultra-wrap">
+        <header class="main-title">
+            <h1>Masz sprawę? <span>Pisz śmiało!</span></h1>
+        </header>
+
+        <div class="contact-main-grid">
+            <div class="info-boxes">
+                <div class="fun-card tilt-card">
+                    <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <div class="card-text">
+                        <span>Mój e-mail:</span>
+                        <p>big.chocko44@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="fun-card tilt-card discord-info">
+                    <div class="card-icon"><i class="fab fa-discord"></i></div>
+                    <div class="card-text">
+                        <span>Discord DM:</span>
+                        <p>bigchocko</p>
+                    </div>
+                </div>
+
+                <div class="fun-card tilt-card">
+                    <div class="card-icon"><i class="fab fa-instagram"></i></div>
+                    <div class="card-text">
+                        <span>Instagram DM:</span>
+                        <p>@j.nocun</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-fun-box">
+                <form id="simple-form" action="https://formspree.io/f/mdaogllo" method="POST">
+                    <div class="input-row">
+                        <div class="cyber-field">
+                            <label>Twój Nick</label>
+                            <input type="text" name="nick" placeholder="Imię / Nick" required>
+                        </div>
+                        <div class="cyber-field">
+                            <label>Twój E-mail</label>
+                            <input type="email" name="email" placeholder="Twój adres email" required>
+                        </div>
+                    </div>
+                    <div class="cyber-field">
+                        <label>Wiadomość</label>
+                        <textarea name="wiadomosc" placeholder="W czym mogę pomóc?" rows="8" required></textarea>
+                    </div>
+                    <button type="submit" class="fire-btn">
+                        <span class="btn-content">WYŚLIJ WIADOMOŚĆ <i class="fas fa-paper-plane"></i></span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="contact-footer">
+        <p>© 2025 BigChocko. All Rights Reserved. Created by <span>Kapix</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="kontakt.js"></script>
+</body>
+</html>
